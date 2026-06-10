@@ -16,7 +16,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/CalSaversSandbox/',
+  base: '/ux-calsaversdemo-alpha/',
 
   plugins: [
     figmaAssetResolver(),
