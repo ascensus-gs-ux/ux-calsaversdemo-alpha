@@ -79,8 +79,6 @@ src/
 ├── app/
 │   ├── App.tsx                    # Main orchestrator
 │   └── components/                # Reusable components
-│       └── figma/
-│           └── ImageWithFallback.tsx
 ├── imports/
 │   ├── PayrollProviderIntegration/
 │   │   └── PayrollProviderIntegration.tsx  # Main layout component
