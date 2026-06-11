@@ -1,5 +1,6 @@
 import { useState } from "react";
 import svgPaths from "./svg-28wx2odd2y";
+import imgImage271 from "./6568f42840319b6c3af603b082bc57fc59b6af19.png";
 import imgScreenshot20240624At23545Pm1 from "./039f4bb8bf585934b82734f24f18ba6d5292401d.png";
 import imgCaSealWhite1 from "./c38e6508f8ab610083aded5dea6e466c8ce1f856.png";
 
@@ -129,6 +130,118 @@ const PAYROLL_PROVIDERS = [
   "YPD HCM",
 ];
 
+function Logo() {
+  return (
+    <div
+      className="content-stretch flex items-center justify-center relative shrink-0"
+      data-name="logo"
+    >
+      <div
+        className="h-[80px] relative shrink-0 w-[302px]"
+        data-name="image 271"
+      >
+        <img
+          alt=""
+          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+          src={imgImage271}
+        />
+      </div>
+    </div>
+  );
+}
+
+function ButtonGroup() {
+  return (
+    <div
+      className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full md:w-auto"
+      data-name="ButtonGroup"
+    >
+      <a
+        className="bg-white content-stretch flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative rounded-[4px] shrink-0 flex-1 md:flex-none"
+        href="https://saver.calsavers.com/californiaeetpl/auth/sessionCreate/viewCollectUsername.cs?request_locale=en_US"
+        target="_blank"
+        data-name="Button"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute border border-[#00594f] border-solid inset-[-0.5px] pointer-events-none rounded-[4.5px]"
+        />
+        <div className="flex flex-col font-['Poppins',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#00594f] text-[16px] text-center tracking-[1px] whitespace-nowrap">
+          <p className="leading-[24px]">Register</p>
+        </div>
+      </a>
+      <a
+        className="bg-[#00594f] content-stretch cursor-pointer flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative rounded-[4px] shrink-0 flex-1 md:flex-none"
+        href="https://saver.calsavers.com/californiaeetpl/auth/sessionCreate/viewCollectUsername.cs?request_locale=en_US"
+        target="_blank"
+        data-name="Button"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute border border-[#00473f] border-solid inset-[-0.5px] pointer-events-none rounded-[4.5px]"
+        />
+        <div className="flex flex-col font-['Poppins',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[1px] whitespace-nowrap">
+          <p className="leading-[24px]">Login</p>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+function NavInnerContainer() {
+  return (
+    <div
+      className="bg-white relative shrink-0 w-full"
+      data-name="InnerContainer"
+    >
+      <div className="content-stretch flex flex-row items-center justify-center size-full w-full">
+        <div className="content-stretch flex flex-col md:flex-row items-center md:justify-between justify-center relative size-full w-full p-[0px] gap-4 md:gap-0">
+          <Logo />
+          <ButtonGroup />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Navigation() {
+  return (
+    <div
+      className="bg-white h-[112px] mb-[-1px] relative shrink-0 w-full"
+      data-name="Navigation"
+    >
+      <div className="flex flex-col items-center justify-center size-full w-full">
+        <div className="content-stretch flex flex-col items-center justify-center px-[8px] relative size-full w-full">
+          <NavInnerContainer />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Hr() {
+  return (
+    <div
+      className="h-[16px] mb-[-1px] relative shrink-0 w-full"
+      data-name="hr"
+    >
+      <svg
+        className="absolute block inset-0 size-full"
+        fill="none"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 16"
+      >
+        <g id="hr">
+          <path
+            d="M0 8H1440"
+            id="hr_2"
+            stroke="var(--stroke-0, #D3D3D3)"
+          />
+        </g>
+      </svg>
+    </div>
+  );
+}
 
 function InnerContainer2() {
   return (
@@ -3496,6 +3609,8 @@ export default function PayrollProviderIntegration(props?: {
       className="bg-white content-stretch flex flex-col items-start relative size-full"
       data-name="Payroll Provider Integration"
     >
+      <Navigation />
+      <Hr />
       <Hero />
       <Section
         bodyContent={bodyContent}
