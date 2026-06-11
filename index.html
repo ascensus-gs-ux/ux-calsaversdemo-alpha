@@ -5,117 +5,12 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>CalSavers Sandbox Prototype</title>
-      <style>html, body { margin: 0; } #root { width: 100%; }</style>
-      <!-- CalSavers site styles (Bootstrap, FontAwesome, site theme) -->
-      <link rel="stylesheet" href="https://cdn.unite529.com/jcdn/modules/module-common-bootstrapv4/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="https://cdn.unite529.com/jcdn/modules/module-common-bootstrapv4/css/fontawesome-all.css" />
-      <link rel="stylesheet" href="https://cdn.unite529.com/jcdn/modules/templates-caer/css/styles.css" />
-      <link rel="stylesheet" href="https://cdn.unite529.com/jcdn/modules/templates-caer/css/languageSwitchingLinks.css" />
+      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
     </head>
 
     <body>
-      <!-- CalSavers header and nav — rendered as static HTML so Bootstrap styles apply cleanly,
-           unaffected by Tailwind CSS injected into #root by Vite. -->
-
-      <div class="container-fluid nav-header">
-        <div class="container nav-header">
-          <div class="d-flex justify-content-between align-items-center flex-wrap">
-            <a href="https://www.calsavers.com?language=en" style="text-decoration:none">
-              <img alt="calsavers logo" class="calsavers-nav-logo"
-                   src="https://cdn.unite529.com/jcdn/files/CAER/images/logo_seal_combo_web.png" />
-            </a>
-            <div class="navbtns mt-lg-5" id="navbtns-noauth">
-              <a class="btn btn-secondary" href="/californiaertpl/enroll/createEmp/viewCollectEmpPreRegDetails.cs?request_locale=en_US">Register</a>
-              <a class="btn btn-primary"   href="/californiaertpl/auth/sessionCreate/viewCollectEmpLogin.cs">Login</a>
-            </div>
-            <div class="navbtns mt-lg-5" id="navbtns-auth" style="display:none">
-              <a class="btn btn-secondary" href="/californiaertpl/dashboard/overview/viewEmpDashboard.cs?request_locale=en_US">My portal</a>
-              <a class="btn btn-primary"   href="/californiaertpl/auth/sessionDestroy/collectEmpLogout.cs?request_locale=en_US">Log off</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <nav class="navbar navbar-nav navbar-expand-lg navbar-light">
-        <div class="container flex-row-reverse pr-0">
-          <div id="navbarLanguage">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown languages">
-                <button class="dropdown-toggle language-picker pr-0" aria-expanded="false"
-                        aria-haspopup="true" data-toggle="dropdown" id="dropdownLangMenu"
-                        type="button" aria-label="Toggle navigation">
-                  English
-                </button>
-                <div class="dropdown-menu dropdown-menu-right mx-0" aria-labelledby="dropdownLangMenu">
-                  <a class="select-lang dropdown-item" href="#" onclick="window.location.reload(true);" role="menuitem" aria-label="switch to English">English</a>
-                  <a class="select-lang dropdown-item" role="menuitem" href="/home/help-center/payroll.html" onclick="setCookie('es');" aria-label="switch to Spanish">Español</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/filipino.html"  onclick="setCookie('en');" aria-label="switch to Filipino">Filipino</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/korean.html"    onclick="setCookie('en');" aria-label="switch to Korean">한국어</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/vietnamese.html" onclick="setCookie('en');" aria-label="switch to Vietnamese">tiếng việt</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/chinese.html"   onclick="setCookie('en');" aria-label="switch to Chinese">中文</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/armenian.html"  onclick="setCookie('en');" aria-label="switch to Armenian">հայերեն</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/russian.html"   onclick="setCookie('en');" aria-label="switch to Russian">ру́сский</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/japanese.html"  onclick="setCookie('en');" aria-label="switch to Japanese">日本語</a>
-                  <a class="dropdown-item" role="menuitem" href="/home/punjabi.html"   onclick="setCookie('en');" aria-label="switch to Punjabi">ਪੰਜਾਬੀ</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse"
-                  data-target="#navbarText" aria-controls="navbarText"
-                  aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav caer2">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="/home/employers.html">Employers</a>
-                <button class="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu emp">
-                  <a href="/home.html"                              class="dropdown-item">Getting Started</a>
-                  <a href="/home/employers/program-details.html"    class="dropdown-item">Facilitating CalSavers</a>
-                  <a href="/home/employers/support.html"            class="dropdown-item">Employer Support</a>
-                  <a href="/home/employers/resources.html"          class="dropdown-item">Resources</a>
-                  <a href="/home/help-center/payroll.html"          class="dropdown-item">Payroll Providers</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="https://saver.calsavers.com/?language=en">Savers</a>
-                <button class="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu emp">
-                  <a href="https://saver.calsavers.com/home/savers/program-details.html?language=en"  class="dropdown-item">Program Details</a>
-                  <a href="https://saver.calsavers.com/home/savers/contributions.html?language=en"    class="dropdown-item">Contributions</a>
-                  <a href="https://saver.calsavers.com/home/savers/investments.html?language=en"      class="dropdown-item">Investments</a>
-                  <a href="https://saver.calsavers.com/home/savers/beneficiaries.html?language=en"    class="dropdown-item">Beneficiaries</a>
-                  <a href="https://saver.calsavers.com/home/savers/withdrawals.html?language=en"      class="dropdown-item">Withdrawals</a>
-                  <a href="https://saver.calsavers.com/home/savers/calculator.html?language=en"       class="dropdown-item">Calculator</a>
-                  <a href="https://saver.calsavers.com/home/savers/price--performance.html?language=en" class="dropdown-item">Price &amp; Performance</a>
-                  <a href="https://saver.calsavers.com/home/savers/webinar.html?language=en"          class="dropdown-item">Webinars</a>
-                  <a href="https://saver.calsavers.com/home/savers/forms.html?language=en"            class="dropdown-item">Forms</a>
-                  <a href="https://saver.calsavers.com/home/savers/financial-wellness.html?language=en" class="dropdown-item">Financial Education</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="https://www.calsavers.com/home/about.html?language=en">About</a>
-                <button class="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu about"></div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.calsavers.com/home/frequently-asked-questions.html?language=en">Help Center</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
       <div id="root"></div>
       <script type="module" src="/src/main.tsx"></script>
-
-      <!-- Bootstrap JS (jQuery → Popper → Bootstrap → site code) -->
-      <script src="https://cdn.unite529.com/jcdn/modules/jquery/javascript/jquery-1.12.4.min.js"></script>
-      <script src="https://cdn.unite529.com/jcdn/modules/module-common-bootstrapv4/javascript/popper.min.js"></script>
-      <script src="https://cdn.unite529.com/jcdn/modules/module-common-bootstrapv4/javascript/bootstrap.min.js"></script>
-      <script src="https://cdn.unite529.com/jcdn/modules/templates-caer/javascript/code.js"></script>
     </body>
   </html>
   
