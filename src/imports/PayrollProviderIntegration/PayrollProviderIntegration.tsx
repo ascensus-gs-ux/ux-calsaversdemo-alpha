@@ -129,121 +129,7 @@ const PAYROLL_PROVIDERS = [
   "YPD HCM",
 ];
 
-function Navigation() {
-  return (
-    <div data-name="Navigation">
-      {/* Header: logo + auth buttons */}
-      <div className="container-fluid nav-header">
-        <div className="container nav-header">
-          <div className="d-flex justify-content-between align-items-center flex-wrap">
-            <a href="https://www.calsavers.com?language=en" style={{ textDecoration: "none" }}>
-              <img
-                alt="calsavers logo"
-                className="calsavers-nav-logo"
-                src="https://cdn.unite529.com/jcdn/files/CAER/images/logo_seal_combo_web.png"
-              />
-            </a>
-            <div className="navbtns mt-lg-5" id="navbtns-noauth">
-              <a className="btn btn-secondary" href="/californiaertpl/enroll/createEmp/viewCollectEmpPreRegDetails.cs?request_locale=en_US">Register</a>
-              {" "}
-              <a className="btn btn-primary" href="/californiaertpl/auth/sessionCreate/viewCollectEmpLogin.cs">Login</a>
-            </div>
-            <div className="navbtns mt-lg-5" id="navbtns-auth" style={{ display: "none" }}>
-              <a className="btn btn-secondary" href="/californiaertpl/dashboard/overview/viewEmpDashboard.cs?request_locale=en_US">My portal</a>
-              {" "}
-              <a className="btn btn-primary" href="/californiaertpl/auth/sessionDestroy/collectEmpLogout.cs?request_locale=en_US">Log off</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Main nav bar */}
-      <nav className="navbar navbar-nav navbar-expand-lg navbar-light">
-        <div className="container flex-row-reverse pr-0">
-          <div id="navbarLanguage">
-            <ul className="navbar-nav">
-              <li className="nav-item dropdown languages">
-                <button
-                  className="dropdown-toggle language-picker pr-0"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  data-toggle="dropdown"
-                  id="dropdownLangMenu"
-                  type="button"
-                  aria-label="Toggle navigation"
-                >
-                  English
-                </button>
-                <div className="dropdown-menu dropdown-menu-right mx-0" aria-labelledby="dropdownLangMenu">
-                  <a className="select-lang dropdown-item" href="#" onClick={() => window.location.reload()} role="menuitem" aria-label="switch to English">English</a>
-                  <a className="select-lang dropdown-item" role="menuitem" aria-label="switch to Spanish" href="/home/help-center/payroll.html" onClick={() => (window as any).setCookie?.('es')}>Español</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/filipino.html" aria-label="switch to Filipino" onClick={() => (window as any).setCookie?.('en')}>Filipino</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/korean.html" aria-label="switch to Korean" onClick={() => (window as any).setCookie?.('en')}>한국어</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/vietnamese.html" aria-label="switch to Vietnamese" onClick={() => (window as any).setCookie?.('en')}>tiếng việt</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/chinese.html" aria-label="switch to Chinese" onClick={() => (window as any).setCookie?.('en')}>中文</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/armenian.html" aria-label="switch to Armenian" onClick={() => (window as any).setCookie?.('en')}>հայերեն</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/russian.html" aria-label="switch to Russian" onClick={() => (window as any).setCookie?.('en')}>ру́сский</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/japanese.html" aria-label="switch to Japanese" onClick={() => (window as any).setCookie?.('en')}>日本語</a>
-                  <a className="dropdown-item" role="menuitem" href="/home/punjabi.html" aria-label="switch to Punjabi" onClick={() => (window as any).setCookie?.('en')}>ਪੰਜਾਬੀ</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav caer2">
-              <li className="nav-item dropdown">
-                <a className="nav-link" href="/home/employers.html">Employers</a>
-                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div className="dropdown-menu emp">
-                  <a href="/home.html" className="dropdown-item">Getting Started</a>
-                  <a href="/home/employers/program-details.html" className="dropdown-item">Facilitating CalSavers</a>
-                  <a href="/home/employers/support.html" className="dropdown-item">Employer Support</a>
-                  <a href="/home/employers/resources.html" className="dropdown-item">Resources</a>
-                  <a href="/home/help-center/payroll.html" className="dropdown-item">Payroll Providers</a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link" href="https://saver.calsavers.com/?language=en">Savers</a>
-                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div className="dropdown-menu emp">
-                  <a href="https://saver.calsavers.com/home/savers/program-details.html?language=en" className="dropdown-item">Program Details</a>
-                  <a href="https://saver.calsavers.com/home/savers/contributions.html?language=en" className="dropdown-item">Contributions</a>
-                  <a href="https://saver.calsavers.com/home/savers/investments.html?language=en" className="dropdown-item">Investments</a>
-                  <a href="https://saver.calsavers.com/home/savers/beneficiaries.html?language=en" className="dropdown-item">Beneficiaries</a>
-                  <a href="https://saver.calsavers.com/home/savers/withdrawals.html?language=en" className="dropdown-item">Withdrawals</a>
-                  <a href="https://saver.calsavers.com/home/savers/calculator.html?language=en" className="dropdown-item">Calculator</a>
-                  <a href="https://saver.calsavers.com/home/savers/price--performance.html?language=en" className="dropdown-item">Price &amp; Performance</a>
-                  <a href="https://saver.calsavers.com/home/savers/webinar.html?language=en" className="dropdown-item">Webinars</a>
-                  <a href="https://saver.calsavers.com/home/savers/forms.html?language=en" className="dropdown-item">Forms</a>
-                  <a href="https://saver.calsavers.com/home/savers/financial-wellness.html?language=en" className="dropdown-item">Financial Education</a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link" href="https://www.calsavers.com/home/about.html?language=en">About</a>
-                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
-                <div className="dropdown-menu about"></div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="https://www.calsavers.com/home/frequently-asked-questions.html?language=en">Help Center</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-}
 
 function InnerContainer2() {
   return (
@@ -3611,7 +3497,6 @@ export default function PayrollProviderIntegration(props?: {
       className="bg-white content-stretch flex flex-col items-start relative size-full"
       data-name="Payroll Provider Integration"
     >
-      <Navigation />
       <Hero />
       <Section
         bodyContent={bodyContent}
