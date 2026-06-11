@@ -1,6 +1,5 @@
 import { useState } from "react";
 import svgPaths from "./svg-28wx2odd2y";
-import imgImage271 from "./6568f42840319b6c3af603b082bc57fc59b6af19.png";
 import imgScreenshot20240624At23545Pm1 from "./039f4bb8bf585934b82734f24f18ba6d5292401d.png";
 import imgCaSealWhite1 from "./c38e6508f8ab610083aded5dea6e466c8ce1f856.png";
 
@@ -130,115 +129,118 @@ const PAYROLL_PROVIDERS = [
   "YPD HCM",
 ];
 
-function Logo() {
-  return (
-    <div
-      className="content-stretch flex items-center justify-center relative shrink-0"
-      data-name="logo"
-    >
-      <div
-        className="h-[80px] relative shrink-0 w-[302px]"
-        data-name="image 271"
-      >
-        <img
-          alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-          src={imgImage271}
-        />
-      </div>
-    </div>
-  );
-}
-
-function ButtonGroup() {
-  return (
-    <div
-      className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full md:w-auto"
-      data-name="ButtonGroup"
-    >
-      <a
-        className="bg-white content-stretch flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative rounded-[4px] shrink-0 flex-1 md:flex-none"
-        href="https://saver.calsavers.com/californiaeetpl/auth/sessionCreate/viewCollectUsername.cs?request_locale=en_US"
-        target="_blank"
-        data-name="Button"
-      >
-        <div
-          aria-hidden="true"
-          className="absolute border border-[#00594f] border-solid inset-[-0.5px] pointer-events-none rounded-[4.5px]"
-        />
-        <div className="flex flex-col font-['Poppins',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#00594f] text-[16px] text-center tracking-[1px] whitespace-nowrap">
-          <p className="leading-[24px]">Register</p>
-        </div>
-      </a>
-      <a
-        className="bg-[#00594f] content-stretch cursor-pointer flex gap-[8px] items-center justify-center px-[16px] py-[8px] relative rounded-[4px] shrink-0 flex-1 md:flex-none"
-        href="https://saver.calsavers.com/californiaeetpl/auth/sessionCreate/viewCollectUsername.cs?request_locale=en_US"
-        target="_blank"
-        data-name="Button"
-      >
-        <div
-          aria-hidden="true"
-          className="absolute border border-[#00473f] border-solid inset-[-0.5px] pointer-events-none rounded-[4.5px]"
-        />
-        <div className="flex flex-col font-['Poppins',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-center text-white tracking-[1px] whitespace-nowrap">
-          <p className="leading-[24px]">Login</p>
-        </div>
-      </a>
-    </div>
-  );
-}
-
-function NavInnerContainer() {
-  return (
-    <div
-      className="bg-white relative shrink-0 w-full"
-      data-name="InnerContainer"
-    >
-      <div className="content-stretch flex flex-row items-center justify-center size-full w-full">
-        <div className="content-stretch flex flex-col md:flex-row items-center md:justify-between justify-center relative size-full w-full p-[0px] gap-4 md:gap-0">
-          <Logo />
-          <ButtonGroup />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Navigation() {
   return (
-    <div
-      className="bg-white h-[112px] mb-[-1px] relative shrink-0 w-full"
-      data-name="Navigation"
-    >
-      <div className="flex flex-col items-center justify-center size-full w-full">
-        <div className="content-stretch flex flex-col items-center justify-center px-[8px] relative size-full w-full">
-          <NavInnerContainer />
+    <div data-name="Navigation">
+      {/* Header: logo + auth buttons */}
+      <div className="container-fluid nav-header">
+        <div className="container nav-header">
+          <div className="d-flex justify-content-between align-items-center flex-wrap">
+            <a href="https://www.calsavers.com?language=en" style={{ textDecoration: "none" }}>
+              <img
+                alt="calsavers logo"
+                className="calsavers-nav-logo"
+                src="https://cdn.unite529.com/jcdn/files/CAER/images/logo_seal_combo_web.png"
+              />
+            </a>
+            <div className="navbtns mt-lg-5" id="navbtns-noauth">
+              <a className="btn btn-secondary" href="/californiaertpl/enroll/createEmp/viewCollectEmpPreRegDetails.cs?request_locale=en_US">Register</a>
+              {" "}
+              <a className="btn btn-primary" href="/californiaertpl/auth/sessionCreate/viewCollectEmpLogin.cs">Login</a>
+            </div>
+            <div className="navbtns mt-lg-5" id="navbtns-auth" style={{ display: "none" }}>
+              <a className="btn btn-secondary" href="/californiaertpl/dashboard/overview/viewEmpDashboard.cs?request_locale=en_US">My portal</a>
+              {" "}
+              <a className="btn btn-primary" href="/californiaertpl/auth/sessionDestroy/collectEmpLogout.cs?request_locale=en_US">Log off</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
 
-function Hr() {
-  return (
-    <div
-      className="h-[16px] mb-[-1px] relative shrink-0 w-full"
-      data-name="hr"
-    >
-      <svg
-        className="absolute block inset-0 size-full"
-        fill="none"
-        preserveAspectRatio="none"
-        viewBox="0 0 1440 16"
-      >
-        <g id="hr">
-          <path
-            d="M0 8H1440"
-            id="hr_2"
-            stroke="var(--stroke-0, #D3D3D3)"
-          />
-        </g>
-      </svg>
+      {/* Main nav bar */}
+      <nav className="navbar navbar-nav navbar-expand-lg navbar-light">
+        <div className="container flex-row-reverse pr-0">
+          <div id="navbarLanguage">
+            <ul className="navbar-nav">
+              <li className="nav-item dropdown languages">
+                <button
+                  className="dropdown-toggle language-picker pr-0"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  data-toggle="dropdown"
+                  id="dropdownLangMenu"
+                  type="button"
+                  aria-label="Toggle navigation"
+                >
+                  English
+                </button>
+                <div className="dropdown-menu dropdown-menu-right mx-0" aria-labelledby="dropdownLangMenu">
+                  <a className="select-lang dropdown-item" href="#" onClick={() => window.location.reload()} role="menuitem" aria-label="switch to English">English</a>
+                  <a className="select-lang dropdown-item" role="menuitem" aria-label="switch to Spanish" href="/home/help-center/payroll.html" onClick={() => (window as any).setCookie?.('es')}>Español</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/filipino.html" aria-label="switch to Filipino" onClick={() => (window as any).setCookie?.('en')}>Filipino</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/korean.html" aria-label="switch to Korean" onClick={() => (window as any).setCookie?.('en')}>한국어</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/vietnamese.html" aria-label="switch to Vietnamese" onClick={() => (window as any).setCookie?.('en')}>tiếng việt</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/chinese.html" aria-label="switch to Chinese" onClick={() => (window as any).setCookie?.('en')}>中文</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/armenian.html" aria-label="switch to Armenian" onClick={() => (window as any).setCookie?.('en')}>հայերեն</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/russian.html" aria-label="switch to Russian" onClick={() => (window as any).setCookie?.('en')}>ру́сский</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/japanese.html" aria-label="switch to Japanese" onClick={() => (window as any).setCookie?.('en')}>日本語</a>
+                  <a className="dropdown-item" role="menuitem" href="/home/punjabi.html" aria-label="switch to Punjabi" onClick={() => (window as any).setCookie?.('en')}>ਪੰਜਾਬੀ</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav caer2">
+              <li className="nav-item dropdown">
+                <a className="nav-link" href="/home/employers.html">Employers</a>
+                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
+                <div className="dropdown-menu emp">
+                  <a href="/home.html" className="dropdown-item">Getting Started</a>
+                  <a href="/home/employers/program-details.html" className="dropdown-item">Facilitating CalSavers</a>
+                  <a href="/home/employers/support.html" className="dropdown-item">Employer Support</a>
+                  <a href="/home/employers/resources.html" className="dropdown-item">Resources</a>
+                  <a href="/home/help-center/payroll.html" className="dropdown-item">Payroll Providers</a>
+                </div>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link" href="https://saver.calsavers.com/?language=en">Savers</a>
+                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
+                <div className="dropdown-menu emp">
+                  <a href="https://saver.calsavers.com/home/savers/program-details.html?language=en" className="dropdown-item">Program Details</a>
+                  <a href="https://saver.calsavers.com/home/savers/contributions.html?language=en" className="dropdown-item">Contributions</a>
+                  <a href="https://saver.calsavers.com/home/savers/investments.html?language=en" className="dropdown-item">Investments</a>
+                  <a href="https://saver.calsavers.com/home/savers/beneficiaries.html?language=en" className="dropdown-item">Beneficiaries</a>
+                  <a href="https://saver.calsavers.com/home/savers/withdrawals.html?language=en" className="dropdown-item">Withdrawals</a>
+                  <a href="https://saver.calsavers.com/home/savers/calculator.html?language=en" className="dropdown-item">Calculator</a>
+                  <a href="https://saver.calsavers.com/home/savers/price--performance.html?language=en" className="dropdown-item">Price &amp; Performance</a>
+                  <a href="https://saver.calsavers.com/home/savers/webinar.html?language=en" className="dropdown-item">Webinars</a>
+                  <a href="https://saver.calsavers.com/home/savers/forms.html?language=en" className="dropdown-item">Forms</a>
+                  <a href="https://saver.calsavers.com/home/savers/financial-wellness.html?language=en" className="dropdown-item">Financial Education</a>
+                </div>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link" href="https://www.calsavers.com/home/about.html?language=en">About</a>
+                <button className="dropdown-toggle" aria-label="open dropdown menu" type="button" aria-haspopup="true" aria-expanded="false"></button>
+                <div className="dropdown-menu about"></div>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="https://www.calsavers.com/home/frequently-asked-questions.html?language=en">Help Center</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }
@@ -3610,7 +3612,6 @@ export default function PayrollProviderIntegration(props?: {
       data-name="Payroll Provider Integration"
     >
       <Navigation />
-      <Hr />
       <Hero />
       <Section
         bodyContent={bodyContent}
