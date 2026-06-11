@@ -252,6 +252,7 @@ export default function App() {
         /* DESKTOP LAYOUT - Maintain centered layout with max-width */
         [data-name="Section"],
         [data-name="Hero"],
+        [data-name="Navigation"],
         [data-name="Footer"] {
           width: 100% !important;
           max-width: none !important;
@@ -263,6 +264,10 @@ export default function App() {
           max-width: 66.666% !important;
           margin-left: auto !important;
           margin-right: auto !important;
+        }
+
+        [data-name="Navigation"] [data-name="InnerContainer"] {
+          max-width: 66.666% !important;
         }
 
         [data-name="Section"] > [data-name="InnerContainer"] {
@@ -410,6 +415,7 @@ export default function App() {
         @media (max-width: 1024px) {
           /* Remove max-width constraints on tablet */
           [data-name="Steps"],
+          [data-name="Navigation"] [data-name="InnerContainer"],
           [data-name="Section"] > [data-name="InnerContainer"],
           [data-name="Footer"] > div {
             max-width: none !important;
@@ -514,12 +520,55 @@ export default function App() {
         @media (max-width: 767px) {
           /* Remove max-width constraints and add padding on mobile */
           [data-name="Steps"],
+          [data-name="Navigation"] [data-name="InnerContainer"],
           [data-name="Section"] > [data-name="InnerContainer"],
           [data-name="Footer"] > div {
             max-width: none !important;
             padding-left: 24px !important;
             padding-right: 24px !important;
             width: 100% !important;
+          }
+
+          [data-name="Navigation"] [data-name="InnerContainer"]{
+            max-width: none !important;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+            padding-top: 32px !important;
+          }
+
+          [data-name="Navigation"] {
+            height: auto !important;
+          }
+
+          [data-name="Navigation"] > div > div{
+            padding-inline: 0px !important;
+          }
+
+          /* Mobile header - stack logo above buttons */
+          [data-name="Navigation"] [data-name="InnerContainer"] .content-stretch.flex.flex-col.md\\:flex-row {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 24px !important;
+            width: 100% !important;
+          }
+
+          /* Header buttons - equal width 50/50 */
+          [data-name="ButtonGroup"] {
+            width: 100% !important;
+            display: flex !important;
+            gap: 0px !important;
+          }
+
+          [data-name="ButtonGroup"] > a {
+            flex: 1 !important;
+          }
+
+          [data-name="ButtonGroup"] [data-name="Button"] > div {
+            border-radius: 0px !important;
+          }
+
+          [data-name="ButtonGroup"] [data-name="Button"] {
+            border-radius: 0px !important;
           }
 
           [data-name="ScreenshotContainer"] [data-name="Container"]{
